@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= ownedCar.model %></title>
+  </head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1><%= ownedCar.model %>   <%= ownedCar.manufacturer %></h1>
+    <% if (ownedCar.year) { %>
+    <p>manufacturer year: <%= ownedCar.year %></p>
+    <% } %> 
+    <% if (ownedCar.insuranceCo) { %>
+    <p> insurance Co: <%= ownedCar.insuranceCo%></p>
+    <% } %>
+    <% if (ownedCar.insuranceDate) { %>
+    <p> insurance end date: <%= ownedCar.insuranceDate%></p>
+    <% } %>
+    <% if (ownedCar.registrationDate) { %>
+    <p> registration date: <%= ownedCar.registrationDate%></p>
+    <% } %>
+    <% if (ownedCar.nextMaintenancetype && ownedCar.nextMaintenanceAfter) { %>
+    <p> next maintenance type: <%= ownedCar.nextMaintenancetype%> 
+     and it after <%= ownedCar.nextMaintenanceAfter %> KM</p>
+    <% } %>
+    <% if (ownedCar.detail) { %>
+    <p> more detail about the car: <%= ownedCar.detail%></p>
+    <% } %>
+   
+
+
+
+     <button href="/users/<%= user._id %>/car/<%= ownedCar._id %>/edit">
+    edit car info</button>
+
+
+    <form
+      action="/users/<%= user._id %>/car/<%= ownedCar._id %>?_method=DELETE"
+      method="POST"
+    >
+      <button type="submit">Delete this application</button>
+    </form>
+  </body>
+</html>

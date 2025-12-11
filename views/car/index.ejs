@@ -12,8 +12,8 @@
       <ul>
       <% ownedCar.forEach((cars)=>{ %>
         <li>
-          <a href="/users/<%= user._id %>/applications/<%=cars._id%>">
-            <%= cars.model %> at <%= cars.year %>
+          <a href="/users/<%= user._id %>/car/<%=cars._id%>">
+            <%= cars.model %>   <%= cars.year %>
           </a>
         </li>
       <% }) %>

@@ -24,11 +24,12 @@ insuranceDate: Date,
 
 nextMaintenancetype:{
   type:String,
-  enum:['interin','full services','major services']
+  enum:['interin','full services','major services',""]
 },
 
-nextMaintenanceAfter:Number
+nextMaintenanceAfter:Number,
 
+registrationDate:Date
 
 })
 
