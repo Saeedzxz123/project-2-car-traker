@@ -61,6 +61,38 @@ router.get('/:id', async (req, res) => {
 
 
 
+router.get('/:id/edit', async (req, res) => {
+  try {
+    const currentUser = await User.findById(req.session.user._id);
+    const ownedCar = currentUser.ownedCar.id(req.params.id);
+
+    res.render('car/edit.ejs', {
+      user: currentUser,
+      ownedCar,
+    });
+  } catch (error) {
+    console.log(error);
+    res.redirect('/');
+  }
+});
+
+
+
+
+router.put('/:id', async (req, res) => {
+  try {
+    const currentUser = await User.findById(req.session.user._id);
+    const ownedCar = currentUser.ownedCar.id(req.params.id);
+
+    ownedCar.set(req.body);
+    await currentUser.save();
+
+    res.redirect(`/users/${currentUser._id}/car/${ownedCar._id}`);
+  } catch (error) {
+    console.log(error);
+    res.redirect('/');
+  }
+});
 
 
 

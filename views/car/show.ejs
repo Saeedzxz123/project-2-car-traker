@@ -31,16 +31,19 @@
    
 
 
-
-     <button href="/users/<%= user._id %>/car/<%= ownedCar._id %>/edit">
-    edit car info</button>
+    <form
+      action="/users/<%= user._id %>/car/<%= ownedCar._id %>/edit"
+      method="get"
+    >
+      <button type="submit">edit car info</button>
+    </form>
 
 
     <form
       action="/users/<%= user._id %>/car/<%= ownedCar._id %>?_method=DELETE"
       method="POST"
     >
-      <button type="submit">Delete this application</button>
+      <button type="submit">Delete this car</button>
     </form>
   </body>
 </html>
