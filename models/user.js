@@ -1,6 +1,38 @@
 const mongoose = require('mongoose');
 
-// we need mongoose schema
+
+
+const ownedCarSchema = new mongoose.Schema({
+
+   modee : {
+    type: String,
+    required:true
+
+  },
+
+  year:Number,
+  
+  manufacturer :String,
+
+  detail: {
+    type: String,
+    max:500
+  },
+  insuranceCo: String,
+
+insuranceDate: Date,
+
+nextMaintenancetype:{
+  type:String,
+  enum:['interin','full services','major services']
+},
+
+nextMaintenanceAfter:Date
+
+
+})
+
+
 const userSchema = mongoose.Schema({
   username: {
     type: String,
@@ -11,9 +43,11 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+
+  ownedCar:[ownedCarSchema]
 });
-// then we register the model with mongoose
+
 const User = mongoose.model('User', userSchema);
 
-// export the model
+
 module.exports = User;

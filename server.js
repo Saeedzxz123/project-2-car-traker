@@ -54,9 +54,12 @@ app.use('/auth', authCtrl);
 // ---------- PROTECTED ROUTES ----------
 app.use(isSignedIn);
 
-app.get('/vip-lounge', async (req, res) => {
-  res.send('VIP PAGE');
-});
+
+
+
+
+
+
 
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`);
