@@ -2,16 +2,16 @@ const mongoose = require('mongoose');
 
 
 
-const ownedCarSchema = new mongoose.Schema({
+const ownedCar = new mongoose.Schema({
 
-   modee : {
+   model : {
     type: String,
     required:true
 
   },
 
   year:Number,
-  
+
   manufacturer :String,
 
   detail: {
@@ -27,7 +27,7 @@ nextMaintenancetype:{
   enum:['interin','full services','major services']
 },
 
-nextMaintenanceAfter:Date
+nextMaintenanceAfter:Number
 
 
 })
@@ -44,7 +44,7 @@ const userSchema = mongoose.Schema({
     required: true,
   },
 
-  ownedCar:[ownedCarSchema]
+  ownedCar:[ownedCar],
 });
 
 const User = mongoose.model('User', userSchema);

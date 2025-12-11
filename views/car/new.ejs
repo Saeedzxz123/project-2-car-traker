@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add a New App</title>
+
+    <style>
+        .nextMaintenanceAfter{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+    </style>
+  </head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Add a New App</h1>
+
+   <form action="/users/<%= user._id %>/car" method="POST">
+      <label for="model">model:</label>
+      <input type="text" name="model" id="model" required/>
+
+      <label for="manufacturer">manufacturer:</label>
+      <input type="text" name="manufacturer" id="manufacturer" required />
+
+      <label for="year">manufacturer year:</label>
+      <input type="number" name="year" id="year" />
+
+      <label for="insuranceCo">insurance .Co:</label>
+      <input type="text" name="insuranceCo" id="insuranceCo" />
+
+    
+      <label for="insuranceDate">insurance renew date:</label>
+      <input type="date" name="insuranceDate" id="insuranceDate" />
+
+
+      <label for="nextMaintenancetype">next maintenance type:</label>
+      <select id="nextMaintenancetype" name="nextMaintenancetype" >
+        <option value="interin">interin</option>
+        <option value="full services">full services</option>
+        <option value="major services">major services</option>
+      </select>
+
+      <div class="nextMaintenanceAfter">    
+          <label for="nextMaintenanceAfter">next maintenance after :</label>
+          <input type="number" name="nextMaintenanceAfter" id="nextMaintenanceAfter"  />
+          <p>km
+          </p>
+      </div>
+      
+      <label for="detail">more car detail:</label>
+      <textarea name="detail" id="detail"></textarea>
+
+
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
