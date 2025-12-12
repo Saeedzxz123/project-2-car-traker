@@ -95,6 +95,21 @@ router.put('/:id', async (req, res) => {
 });
 
 
+router.delete('/:id', async (req, res) => {
+  try {
+    const currentUser = await User.findById(req.session.user._id);
+
+    currentUser.ownedCar.id(req.params.id).deleteOne();
+    await currentUser.save();
+
+    res.redirect(`/users/${currentUser._id}/car`);
+  } catch (error) {
+    console.log(error);
+    res.redirect('/');
+  }
+});
+
+
 
 
 
