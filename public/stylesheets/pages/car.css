@@ -1,0 +1,17 @@
+/* car.css */
+
+.car-list {
+  margin-top: 20px;
+}
+
+.car-card {
+  background: white;
+  border: 1px solid var(--border);
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.car-card a {
+  font-weight: 600;
+}

@@ -77,7 +77,7 @@ router.post('/sign-in', async (req, res) => {
     const isValidPassword = bcrypt.compareSync(password, userInDatabase.password);
     // if the pw doesnt match, throw an error
     if (!isValidPassword) {
-      return res.send('Username or Password is invalid');
+      return res.send('Username or Password is invalid')
     }
 
     // else continue with the "login"
@@ -87,7 +87,7 @@ router.post('/sign-in', async (req, res) => {
     };
 
     req.session.save(() => {
-      res.redirect('/');
+      res.redirect('/car');
     });
   } catch (error) {
     console.error(error);
