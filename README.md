@@ -1,89 +1,62 @@
-<h1>
-  <span class="headline">New Project</span>
-  <span class="subhead">Setup</span>
-</h1>
 
-## Setup
+![alt text](image.png)
 
-Open your Terminal application and navigate to your projects directory:
 
-## Cloning the Auth boilerplate
 
-This template uses the [`MEN Stack Auth Template`](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template) as starter code. Doing so allows us to have a connection established to our MongoDB Atlas, add functioning auth for our user model, and install some of the packages we will need for our app build.
+site name:-
 
-Navigate to the [MEN Stack Auth Template](https://github.com/SEB-11-BH/MEN-AUTH-TEMPLATE.git) and clone the repository to your machine and rename the folder to your desired project name by running the following command in your terminal.
+THE CAR TRACKER
 
-**Be sure to replace `<YOUR-PROJECT-NAME>` with your desired project name!**:
+Description:-
 
-```bash
-git clone https://github.com/SEB-11-BH/MEN-AUTH-TEMPLATE.git <YOUR-PROJECT-NAME>
-```
+We help users track their car's status and everything about it. For example: Insurance company, Insurance end Date, Maintenances, etc.
 
-Note by adding the `open-house` argument we're cloning the specified repo into a directory called `open-house` on our machines.
 
-Next, `cd` into your renamed directory:
+/
 
-**Be sure to replace `<YOUR-PROJECT-NAME>` with your desired project name!**:
+Features:-
 
-```bash
-cd <YOUR-PROJECT-NAME>
-```
+1-user can add new car to the collaction. 
 
-Finally, remove the existing `.git` information from this template:
+2-user can edit the car information .
 
-```bash
-rm -rf .git
-```
+3-user can delete the car information from the collaction
 
-> Removing the `.git` info is important as this is just a starter template provided by GA. You do not need the existing git history for this project.
 
-## GitHub setup
+/
 
-To add this project to GitHub, initialize a new Git repository:
 
-```bash
-git init
-git add .
-git commit -m "init commit"
-```
+Attributions :-
 
-Make a new repository on [GitHub](https://github.com/) for your project.
+1-chatGPT
 
-Link your local project to your remote GitHub repo:
+2-W3school
 
-- use the second set of commands that appear on the empty repo to connect your local project to GitHub.
+3-Salman Murtaza
 
-> 🚨 Do not copy the above command. It will not work. Your GitHub username will replace `<github-username>` (including the `<` and `>`) in the URL above.
+4-Denis Sanchez Dujota
 
-Open the project's folder in your code editor:
+5-Omar Kamal
 
-```bash
-code .
-```
+/
 
-## Install dependencies
 
-Next, you will want to install all of the packages listed in `package.json`
+Technologies used:-
 
-```bash
-npm i
-```
+1-javascript(node.js)
 
-## Create your .env
+2-CSS
 
-Lastly, we want to create `MONGODB_URI` and `SESSION_SECRET` to hold values used in our auth logic.  `MONGODB_URI` will connect to your MongoDB Atlas connection string so you will need to establish one for this application.  `SESSION_SECRET` will aid in your auth session logic.
+3-EJS
 
-Add a `.env` file to your application and add the following secret keys to your application:
+4-MongoDB & Mongoose
 
-```text
-MONGODB_URI=
-SESSION_SECRET=
-```
+5-bcrypt 
 
-Start the server and you are ready for launch.
 
-```bash
-npm run dev
-```
+/
 
-Happy Coding!
+
+next step :-
+
+will add the ableate for the user to deploy there cars for other user to see it with the user to choise what to be show in the car page like only (number plate,car model ,  manufacturer,etc..)
