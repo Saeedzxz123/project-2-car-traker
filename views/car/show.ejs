@@ -30,11 +30,11 @@
     <% } %>
 
     <% if (ownedCar.insuranceDate) { %>
-      <p>Insurance End Date: <%= ownedCar.insuranceDate %></p>
+      <p>Insurance End Date: <%= ownedCar.insuranceDate.toISOString().split('T')[0] %></p>
     <% } %>
 
     <% if (ownedCar.registrationDate) { %>
-      <p>Registration Date: <%= ownedCar.registrationDate %></p>
+      <p>Registration Date: <%= ownedCar.registrationDate.toISOString().split('T')[0] %></p>
     <% } %>
 
     <% if (ownedCar.nextMaintenancetype && ownedCar.nextMaintenanceAfter) { %>
