@@ -22,34 +22,29 @@ router.get('/sign-out', async (req, res) => {
 router.post('/sign-up', async (req, res) => {
   try {
     const { username, password, confirmPassword } = req.body;
-    // make sure the user does not exist
     const userInDatabase = await User.findOne({ username });
 
     if (userInDatabase) {
       return res.send('Username or Password is invalid');
     }
-    // validate the passwords match
     if (password !== confirmPassword) {
       return res.send('Username or Password is invalid');
     }
-    // take the password and encrypt in some way.
     const hashPassword = bcrypt.hashSync(password, 10);
 
-    // If the above passes, then let's create the account
-    // with the encrypted password.
+
     req.body.password = hashPassword;
     delete req.body.confirmPassword;
 
     const user = await User.create(req.body);
-    // when that succeeds let's go ahead and "sign the person in"
-    // rediret them to some page
+
     req.session.user = {
       username: user.username,
       _id: user._id,
     };
 
     req.session.save(() => {
-      res.redirect('/');
+      res.redirect('/car');
     });
   } catch (error) {
     console.error(error);

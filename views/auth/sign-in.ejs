@@ -3,22 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign In</title>
+
+    <%- include('../partials/_head.ejs', {title: "Sign In",pageCss: "/stylesheets/pages/auth.css"}) %>
   </head>
+
   <body>
-    <h1>Log in</h1>
-    <form action="/auth/sign-in" method="POST">
-      <label for="username">Username:</label>
-      <input type="text" name="username" id="username" />
+    <div class="auth-container">
+      <h1>Log In</h1>
 
-      <label for="password">Password:</label>
-      <input type="password" name="password" id="password" />
+  <form action="/auth/sign-in" method="POST"> 
+  <label for="username">Username</label>
+  <input type="text" name="username" id="username" required />
 
-      <button type="submit">Sign in</button>
+  <label for="password">Password</label>
+  <input type="password" name="password" id="password" required />
 
-
-      <h3>Don't have an account.   <a href="/auth/sign-up">Sign Up</a>
-</h3>
+    <button type="submit">Sign In</button>
     </form>
+
+      <h3>Don't have an account?<a href="/auth/sign-up">Sign Up</a>
+      </h3>
+    </div>
   </body>
 </html>

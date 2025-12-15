@@ -1,17 +1,155 @@
-/* car.css */
 
-.car-list {
-  margin-top: 20px;
-}
-
-.car-card {
-  background: white;
-  border: 1px solid var(--border);
-  padding: 16px;
+.page-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fdfdfd;
   border-radius: 8px;
-  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+
 }
 
-.car-card a {
-  font-weight: 600;
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 450px;
+}
+
+form label {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="date"],
+form select,
+form textarea {
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+
+form button {
+  margin: 15px ;
+
+  padding: 10px 10px;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  
+  
+}
+
+form button:hover {
+  background-color: #3b90ce;
+}
+
+
+ul {
+  list-style: none;
+  padding-left: 0;
+
+}
+
+ul li {
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #f3f3f3;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #0077cc;
+  font-weight: bold;
+}
+
+ul li a:hover {
+  text-decoration: underline;
+}
+
+
+.car-detail {
+  margin-top: 15px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+.car-detail p {
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+
+.nextMaintenanceAfter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+
+a.detail-link {
+  color: #0077cc;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+a.detail-link:hover {
+  text-decoration: underline;
+}
+
+
+h1, h2, h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+  font-size: 28px;
+  color: #333;
+}
+
+h2 {
+  font-size: 22px;
+  color: #555;
+}
+
+h3 {
+  font-size: 18px;
+  color: #666;
+}
+
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+  margin: 13px;
 }

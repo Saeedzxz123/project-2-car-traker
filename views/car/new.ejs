@@ -3,58 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Add a New App</title>
 
-<link rel="stylesheet" href="/css/global.css">
-<link rel="stylesheet" href="/css/component.css">
-
-
+    <%- include('../partials/_head.ejs', { title: "Add New Car", pageCss: "/stylesheets/pages/car.css" }) %>
   </head>
   <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1>Add a New App</h1>
 
-   <form action="/users/<%= user._id %>/car" method="POST">
-      <label for="model">car model:</label>
-      <input type="text" name="model" id="model" required/>
+    <div class="page-container">
+      <h1>Add a New Car</h1>
 
-      <label for="manufacturer">manufacturer:</label>
-      <input type="text" name="manufacturer" id="manufacturer" required />
+      <form action="/users/<%= user._id %>/car" method="POST">
+        <label for="model">Car model:</label>
+        <input type="text" name="model" id="model" required/>
 
-      <label for="year">manufacturer year:</label>
-      <input type="number" name="year" id="year" />
+        <label for="manufacturer">Manufacturer:</label>
+        <input type="text" name="manufacturer" id="manufacturer" required />
 
-      <label for="insuranceCo">insurance .Co:</label>
-      <input type="text" name="insuranceCo" id="insuranceCo" />
+        <label for="year">Manufacturer year:</label>
+        <input type="number" name="year" id="year" />
 
-    
-      <label for="insuranceDate">insurance renew date:</label>
-      <input type="date" name="insuranceDate" id="insuranceDate" />
+          <label for="numberPlate">Number Plate:</label>
+        <input type="number" name="numberPlate" id="numberPlate"  />
 
 
-      <label for="registrationDate">registration Date:</label>
-      <input type="date" name="registrationDate" id="registrationDate" />
+        <label for="insuranceCo">Insurance Company:</label>
+        <input type="text" name="insuranceCo" id="insuranceCo" />
 
+        <label for="insuranceDate">Insurance renew date:</label>
+        <input type="date" name="insuranceDate" id="insuranceDate" />
 
-      <label for="nextMaintenancetype">next maintenance type:</label>
-      <select id="nextMaintenancetype" name="nextMaintenancetype" >
-        <option value=""> </option>
-        <option value="interin">interin</option>
-        <option value="full services">full services</option>
-        <option value="major services">major services</option>
-      </select>
+        <label for="registrationDate">Registration Date:</label>
+        <input type="date" name="registrationDate" id="registrationDate" />
 
+        <label for="nextMaintenancetype">Next maintenance type:</label>
+        <select id="nextMaintenancetype" name="nextMaintenancetype">
+          <option value=""> </option>
+          <option value="interin">Interim</option>
+          <option value="full services">Full Services</option>
+          <option value="major services">Major Services</option>
+        </select>
 
-    <label for="nextMaintenanceAfter">next maintenance after :</label>
-        <input type="number" name="nextMaintenanceAfter" id="nextMaintenanceAfter"  />
-        <p>kM       </p>
+        <label for="nextMaintenanceAfter">Next maintenance after (KM):</label>
+        <input type="number" name="nextMaintenanceAfter" id="nextMaintenanceAfter" />
 
-      
-      <label for="detail">more car detail:</label>
-      <textarea name="detail" id="detail"></textarea>
+        <label for="detail">More car detail:</label>
+        <textarea name="detail" id="detail"></textarea>
 
-
-      <button type="submit">Submit</button>
-    </form>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
   </body>
 </html>

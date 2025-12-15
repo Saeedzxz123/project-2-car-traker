@@ -1,86 +1,61 @@
-/* component.css */
-
-/* ===== NAVBAR ===== */
-.navbar {
-  background-color: var(--white);
-  border-bottom: 1px solid var(--border);
-  padding: 14px 28px;
+nav {
+  background-color: var(--primary);
+  color: var(--white);
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.navbar a {
+  padding: 12px 24px;
   font-weight: 600;
-  color: var(--text);
-  margin-left: 16px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  flex-wrap: wrap;
 }
 
-.navbar a:first-child {
-  margin-left: 0;
+nav a {
+  color: var(--white);
+  text-decoration: none;
+  margin-right: 16px;
 }
 
-.navbar a:hover {
-  color: var(--primary);
+nav a:hover {
+  color: var(--primaryDark);
 }
 
-/* ===== BUTTONS ===== */
-.btn {
-  display: inline-block;
+nav l {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-left: auto;
+}
+
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  nav a {
+    margin: 6px 0;
+  }
+  nav l {
+    margin-left: 0;
+    margin-top: 8px;
+  }
+}
+
+.btn-primary {
   background-color: var(--primary);
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
+  color: var(--white);
 }
 
-.btn:hover {
-  background-color: var(--primary-dark);
+.btn-primary:hover {
+  background-color: var(--primaryDark);
 }
 
 .btn-danger {
-  background-color: #dc2626;
+  background-color: var(--danger);
+  color: var(--white);
 }
 
 .btn-danger:hover {
-  background-color: #b91c1c;
+  background-color: var(--dangerDark);
 }
 
-/* ===== FORMS ===== */
-form {
-  background: var(--white);
-  padding: 24px;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  max-width: 500px;
-}
 
-label {
-  display: block;
-  margin-top: 14px;
-  font-weight: 600;
-}
-
-input,
-select,
-textarea {
-  width: 100%;
-  padding: 8px 10px;
-  margin-top: 6px;
-  border-radius: 6px;
-  border: 1px solid var(--border);
-  font-size: 1rem;
-}
-
-textarea {
-  resize: vertical;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-  outline: none;
-  border-color: var(--primary);
-}

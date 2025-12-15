@@ -3,61 +3,53 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Add a New App</title>
 
-    <style>
-        .nextMaintenanceAfter{
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-        }
-    </style>
+    <%- include('../partials/_head.ejs', { title: "Edit Car", pageCss: "/stylesheets/pages/car.css" }) %>
   </head>
   <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1>Add a New App</h1>
 
-   <form action="/users/<%= user._id %>/car/<%= ownedCar._id %>?_method=PUT" method="POST">
-      <label for="model">model:</label>
-      <input type="text" name="model" id="model" value="<%=ownedCar.model%>" required/>
+    <div class="page-container">
+      <h1>Edit Car Info</h1>
 
-      <label for="manufacturer">manufacturer:</label>
-      <input type="text" name="manufacturer" id="manufacturer" value="<%=ownedCar.manufacturer%>" required />
+      <form action="/users/<%= user._id %>/car/<%= ownedCar._id %>?_method=PUT" method="POST">
+        <label for="model">Car model:</label>
+        <input type="text" name="model" id="model" value="<%= ownedCar.model %>" required/>
 
-      <label for="year">manufacturer year:</label>
-      <input type="number" name="year" id="year" value="<%= ownedCar.year %>" />
+        <label for="manufacturer">Manufacturer:</label>
+        <input type="text" name="manufacturer" id="manufacturer" value="<%= ownedCar.manufacturer %>" required />
 
-      <label for="insuranceCo">insurance .Co:</label>
-      <input type="text" name="insuranceCo" id="insuranceCo" value="<%=ownedCar.insuranceCo%>"/>
+        <label for="year">Manufacturer year:</label>
+        <input type="number" name="year" id="year" value="<%= ownedCar.year %>" />
 
-    
-      <label for="insuranceDate">insurance renew date:</label>
-      <input type="date" name="insuranceDate" id="insuranceDate"  value="<%= ownedCar.registrationDate%>"/>
+        <label for="numberPlate">Number Plate:</label>
+        <input type="number" name="numberPlate" id="numberPlate" value="<%= ownedCar.year %>" />
 
+        <label for="insuranceCo">Insurance Company:</label>
+        <input type="text" name="insuranceCo" id="insuranceCo" value="<%= ownedCar.insuranceCo %>" />
 
-      <label for="registrationDate">registration Date:</label>
-      <input type="date" name="registrationDate" id="registrationDate" value="<%= ownedCar.registrationDate %>"/>
+        <label for="insuranceDate">Insurance renew date:</label>
+        <input type="date" name="insuranceDate" id="insuranceDate" value="<%= ownedCar.insuranceDate ? ownedCar.insuranceDate.toISOString().split('T')[0] : '' %>" />
 
+        <label for="registrationDate">Registration Date:</label>
+        <input type="date" name="registrationDate" id="registrationDate" value="<%= ownedCar.registrationDate ? ownedCar.registrationDate.toISOString().split('T')[0] : '' %>" />
 
-      <select id="nextMaintenancetype" name="nextMaintenancetype">
-  <option value=""> </option>
-  <option value="interin" <%= ownedCar.nextMaintenancetype === "interin" ? "selected" : "" %>> interin</option>
-  <option value="full services"  <%= ownedCar.nextMaintenancetype === "full services" ? "selected" : "" %>> full services </option>
-  <option  value="major services" <%= ownedCar.nextMaintenancetype === "major services" ? "selected" : "" %>> major services </option>
-</select>
+        <label for="nextMaintenancetype">Next maintenance type:</label>
+        <select id="nextMaintenancetype" name="nextMaintenancetype">
+          <option value=""> </option>
+          <option value="interin" <%= ownedCar.nextMaintenancetype === "interin" ? "selected" : "" %>>Interim</option>
+          <option value="full services" <%= ownedCar.nextMaintenancetype === "full services" ? "selected" : "" %>>Full Services</option>
+          <option value="major services" <%= ownedCar.nextMaintenancetype === "major services" ? "selected" : "" %>>Major Services</option>
+        </select>
 
+        <label for="nextMaintenanceAfter">Next maintenance after (KM):</label>
+        <input type="number" name="nextMaintenanceAfter" id="nextMaintenanceAfter" value="<%= ownedCar.nextMaintenanceAfter %>" />
 
-    <div class="nextMaintenanceAfter">    
-    <label for="nextMaintenanceAfter">next maintenance after :</label>
-        <input type="number" name="nextMaintenanceAfter" id="nextMaintenanceAfter" value="<%=ownedCar.nextMaintenanceAfter%>" />
-        <p>kM       </p>
-      </div>
-      
-      <label for="detail">more car detail:</label>
-      <textarea name="detail" id="detail"><%= ownedCar.detail %></textarea>
+        <label for="detail">More car detail:</label>
+        <textarea name="detail" id="detail"><%= ownedCar.detail %></textarea>
 
-
-      <button type="submit">Submit</button>
-    </form>
+        <button type="submit">Update Car</button>
+      </form>
+    </div>
   </body>
 </html>

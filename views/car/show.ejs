@@ -5,50 +5,55 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<link rel="stylesheet" href="/css/global.css">
-<link rel="stylesheet" href="/css/component.css">
+<%- include('../partials/_head.ejs', { title: "Page Title", pageCss: "/stylesheets/pages/car.css" }) %>
+
 
 
     <title><%= ownedCar.model %></title>
   </head>
-  <body>
-    <%- include('../partials/_navbar.ejs') %>
-    <h1><%= ownedCar.model %>   <%= ownedCar.manufacturer %></h1>
+ <body>
+  <%- include('../partials/_navbar.ejs') %>
+
+  <div class="page-container show-container">
+    <h1><%= ownedCar.model %> </h1>
+    <p> Manufacturer: <%= ownedCar.manufacturer %></p>
     <% if (ownedCar.year) { %>
-    <p>manufacturer year: <%= ownedCar.year %></p>
+      <p>Manufacturer Year: <%= ownedCar.year %></p>
     <% } %> 
+
+    <% if (ownedCar.numberPlate) { %>
+      <p>Number Plate: <%= ownedCar.numberPlate %></p>
+    <% } %> 
+
     <% if (ownedCar.insuranceCo) { %>
-    <p> insurance Co: <%= ownedCar.insuranceCo%></p>
+      <p>Insurance Co: <%= ownedCar.insuranceCo %></p>
     <% } %>
+
     <% if (ownedCar.insuranceDate) { %>
-    <p> insurance end date: <%= ownedCar.insuranceDate%></p>
+      <p>Insurance End Date: <%= ownedCar.insuranceDate %></p>
     <% } %>
+
     <% if (ownedCar.registrationDate) { %>
-    <p> registration date: <%= ownedCar.registrationDate%></p>
+      <p>Registration Date: <%= ownedCar.registrationDate %></p>
     <% } %>
+
     <% if (ownedCar.nextMaintenancetype && ownedCar.nextMaintenanceAfter) { %>
-    <p> next maintenance type: <%= ownedCar.nextMaintenancetype%> 
-     and it after <%= ownedCar.nextMaintenanceAfter %> KM</p>
+      <p>Next Maintenance: <%= ownedCar.nextMaintenancetype %> after <%= ownedCar.nextMaintenanceAfter %> KM</p>
     <% } %>
+
     <% if (ownedCar.detail) { %>
-    <p> more detail about the car: <%= ownedCar.detail%></p>
+      <p class="detail-textarea">More details: <%= ownedCar.detail %></p>
     <% } %>
-   
 
+    <div class="button-group">
+      <form action="/users/<%= user._id %>/car/<%= ownedCar._id %>/edit" method="get">
+        <button type="submit">Edit Car Info</button>
+      </form>
 
-    <form
-      action="/users/<%= user._id %>/car/<%= ownedCar._id %>/edit"
-      method="get"
-    >
-      <button type="submit">edit car info</button>
-    </form>
-
-
-    <form
-      action="/users/<%= user._id %>/car/<%= ownedCar._id %>?_method=DELETE"
-      method="POST"
-    >
-      <button type="submit">Delete this car</button>
-    </form>
-  </body>
+      <form action="/users/<%= user._id %>/car/<%= ownedCar._id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete This Car</button>
+      </form>
+    </div>
+  </div>
+</body>
 </html>

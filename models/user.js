@@ -12,6 +12,8 @@ const ownedCar = new mongoose.Schema({
 
   year:Number,
 
+  numberPlate:Number,
+
   manufacturer :String,
 
   detail: {

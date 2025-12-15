@@ -3,20 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <%- include('../partials/_head.ejs', { title: "Add New Car", pageCss: "/stylesheets/pages/home.css" }) %>
+
     <title>user home page</title>
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1>Owend cars</h1>
 
-      <ul>
-      <% ownedCar.forEach((cars)=>{ %>
-        <li>
-          <a href="/users/<%= user._id %>/car/<%=cars._id%>">
-            <%= cars.model %>   <%= cars.year %>
-          </a>
-        </li>
-      <% }) %>
-    </ul>
+    <div class="page-container">
+        <h1>Owned Cars</h1>
+
+    <ul class="car-list">
+    <% ownedCar.forEach((car) => { %>
+    <p class="car-row">
+    <dev class="left"><%= car.model %>  <%= car.year %> </dev>
+
+    <dev class="right">
+    <a href="/users/<%= user._id %>/car/<%= car._id %>">       Detail</a></dev>
+    </p>
+    <% }) %>
+  </ul>
+  </div>
 </body>
+
 </html>

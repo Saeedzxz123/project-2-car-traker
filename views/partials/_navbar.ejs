@@ -1,5 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <%- include('../partials/_head.ejs', { title: "Page Title", pageCss: "/stylesheets/component.css" }) %>
 
-<nav>
+  <title>Document</title>
+</head>
+<body>
+  <nav>
   <% if (user) { %>
   <a href="/car">Home</a>
   <a href="/car/new">Add new car</a>
@@ -14,3 +23,6 @@
   <% } %>
     <l>CAR Tracker</l>
 </nav>
+</body>
+</html>
+
