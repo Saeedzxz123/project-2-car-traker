@@ -31,8 +31,10 @@
   justify-content: space-between; 
   align-items: center;
   width: 90%; 
-  padding: 3px 16px;
-  border-color: solid  #a53c3c;
+  padding: 6px 20px ;
+  border-color:  solid  #463e3e;
+  box-shadow: 2px 5px 14px rgba(0,0,0,0.1);
+  margin: 15px auto;
   
 }
 .left{
